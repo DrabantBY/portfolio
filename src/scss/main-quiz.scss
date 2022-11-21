@@ -1,0 +1,177 @@
+.main-quiz {
+    padding: 10px 0;
+
+    &__container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        color: $green;
+
+        &.end {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: $wrong;
+            font-size: 2rem;
+            text-align: center;
+
+            h1 {
+                margin-top: 100px;
+                background-color: $bg;
+                border-radius: 15px;
+                align-self: stretch;
+
+                @media(max-width: 641px) {
+                    font-size: 1.5rem;
+                }
+            }
+        }
+    }
+
+    &__question {
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: 10px;
+        font-size: 1.5rem;
+        color: $green;
+    }
+}
+
+.question {
+    &__poster {
+        padding: 10px 10px 0 10px;
+        text-align: center;
+        border-radius: 15px;
+        background-color: $bg;
+
+        img { 
+            max-height: 250px;
+            margin-bottom: 10px;
+        }
+        
+        figcaption {
+            text-transform: uppercase;
+        }
+
+        @media(max-width: 641px) {
+
+            img { width: 100%; }
+
+            font-size: 1.3rem;
+        }
+    }
+
+    &__state {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__controls {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: 25px;
+
+        @media(max-width: 641px) {
+            flex-wrap: wrap-reverse;
+        }
+    }
+}
+
+.state {
+
+    progress[value] { 
+        -webkit-appearance: none;
+        appearance: none;
+        width: 100%;
+
+        &::-webkit-progress-bar {
+            background-color: $bg;
+            border-radius: 10px;
+            height: 20px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all .3s linear;
+
+            &:hover {
+                background-color: $bg-hover;
+            }
+            
+            @media(max-width: 641px) {
+                height: 15px;
+            }
+        }
+
+        &::-webkit-progress-value {
+           background-color: $green;
+           transition: all .1s linear;
+        }
+    }
+    
+    &__time {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @media(max-width: 641px) {
+            font-size: 1rem;
+        }
+    }
+}
+
+.controls {
+
+    &__btn-play,
+    &__btn-sound {
+        cursor: pointer;
+        background-color: $bg;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 5px;
+        border-radius: 15px;
+        transition: all .3s linear;
+
+        &:hover {
+            background-color: $bg-hover;
+        }
+
+        svg {
+            path { transition: fill .3s linear; }
+            &:hover path { fill: $yellow; }
+        }
+
+        @media(max-width: 641px) {
+            svg {
+                height: 25px;
+            }
+        }
+    }
+
+    progress[value] { 
+        -webkit-appearance: none;
+        appearance: none;
+        width: 100%;
+
+        &::-webkit-progress-bar {
+            background-color: $bg;
+            border-radius: 10px;
+            height: 20px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all .3s linear;
+
+            &:hover {
+                background-color: $bg-hover;
+            }
+            
+            @media(max-width: 641px) {
+                height: 15px;
+            }
+        }
+
+        &::-webkit-progress-value {
+           background-color: $yellow;
+        }
+    }
+}

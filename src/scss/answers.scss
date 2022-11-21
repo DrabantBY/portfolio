@@ -1,0 +1,82 @@
+.answers {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.answer {
+    flex: 1 1;
+    display: flex;
+    align-items: center;
+    color: $yellow;
+    transition: all .3s linear;
+   
+    background-color: $bg;
+    border-radius: 10px;
+
+    &:hover {
+        background-color: $bg-hover;
+    }
+  
+    &:not(:last-child) {
+        margin-bottom: 10px;
+    }
+
+    label {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        column-gap: 20px;
+        padding-left: 30px;
+        cursor: pointer;
+        font-size: 1.5rem;
+        transition: all .3s linear;
+
+        &:hover {
+            color: #ca8a04;
+        }
+
+        @media(max-width: 769px) {
+            font-size: 1.3rem;
+        }
+
+        @media(max-width: 641px) {
+            font-size: 1rem;
+            padding-left: 20px;
+            column-gap: 10px;
+        }
+
+        input {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 15px;
+            height: 15px;
+            border-radius: 3px;
+            background-color: $yellow;
+            transition: all .3s linear;
+            cursor: pointer;
+
+            @media(max-width: 641px) {
+                width: 10px;
+                height: 10px;
+            }
+        }
+
+        &.wrong {
+            color: $wrong;
+            
+            input {
+                background-color: $wrong;
+            }
+        }
+
+        &.success {
+            color: $success;
+            
+            input {
+                background-color: $success;
+            }
+        }
+    }
+}

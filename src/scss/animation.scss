@@ -1,0 +1,90 @@
+.leafs {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  user-select: none;
+  pointer-events: none;
+
+  &.disabled {
+    display: none;
+  }
+
+  .leaf {
+    position: absolute;
+    animation-name: fall;
+    animation-duration: 8s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    width: 120px;
+    height: 120px;
+
+    @media (max-width: 641px) {
+      width: 80px;
+      height: 80px;
+    }
+
+    img {
+      width: 100%;
+    }
+
+    &:first-child {
+      left: 5%;
+      animation-delay: -2s;
+    }
+
+    &:nth-child(2) {
+      left: 20%;
+      animation-delay: -5s;
+    }
+
+    &:nth-child(3) {
+      left: 35%;
+      animation-delay: -3s;
+    }
+
+    &:nth-child(4) {
+      right: 35%;
+    }
+
+    &:nth-child(5) {
+      right: 20%;
+      animation-delay: -4s;
+    }
+
+    &:nth-child(6) {
+      right: 5%;
+      animation-delay: -1s;
+      transform: rotate(180deg);
+    }
+  }
+}
+
+@keyframes fall {
+  0% {
+    opacity: 1;
+    top: -10%;
+    transform: translateX (20px) rotate(0deg);
+  }
+
+  20% {
+    opacity: 0.8;
+    transform: translateX (-20px) rotate(45deg);
+  }
+
+  40% {
+    transform: translateX (-20px) rotate(90deg);
+  }
+
+  60% {
+    transform: translateX (-20px) rotate(135deg);
+  }
+
+  80% {
+    transform: translateX (-20px) rotate(180deg);
+  }
+
+  100% {
+    top: 110%;
+    transform: translateX (-20px) rotate(225deg);
+  }
+}

@@ -1,0 +1,66 @@
+.header-quiz {
+    color: $orange;
+    font-size: 1.3rem;
+
+     @media(max-width: 769px) {
+        font-size: 1.1rem;
+
+        @media(max-width: 641px) {
+            font-size: .9rem;
+        }
+    }
+
+    &__top,
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        
+    }
+
+    &__score {
+        color: $active-green;
+    }
+
+    &__list {
+        text-align: center;
+        row-gap: 15px;
+    }
+
+    &__item {
+        position: relative;
+        cursor: pointer;
+        padding: 0 5px;
+        transition: all .3s linear;
+        background-color: $bg;
+        border-radius: 10px;
+
+      
+
+        &:not(.active):hover { 
+            color: $hover-orange;
+            background-color: $bg-hover; 
+        }
+
+        &:not(.active)::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 3px;
+            width: 0;
+            margin: 0 auto;
+            background-color: $hover-orange;
+            transition: all .3s linear;
+        }
+
+        &:hover::after { width: 100%; }
+
+        &.active {
+            color: $active-green;
+            border: 2px solid $active-green;
+        }
+    }
+}

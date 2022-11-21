@@ -1,0 +1,30 @@
+.footer-quiz {
+
+    &__btn {
+        width: 100%;
+        padding: 10px 0;
+        font-size: 2rem;
+        text-align: center;
+        background-color: $bg;
+        border-radius: 20px;
+        transition: all .3s linear;
+
+        @media(max-width: 641px) {
+            font-size: 1.2rem;
+        }
+
+        &:enabled {
+            cursor: pointer;
+            color: $green;
+            border: 2px solid $green;
+            &:hover { 
+                background-color: $bg-hover;
+            }
+        }
+
+        &:disabled {
+            color: $orange;
+            border: 2px solid $orange;
+        }
+    }
+}

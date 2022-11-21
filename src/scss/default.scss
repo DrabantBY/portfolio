@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@700&display=swap');
+
+:root {
+    font-family: 'Fuzzy Bubbles', cursive;
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+*, 
+*::before, 
+*::after {
+    box-sizing: inherit;
+    padding: 0;
+    margin: 0;
+}
+
+html, 
+body {
+    height: 100%;
+    width: 100%;
+}
+
+
+header,
+footer { 
+    padding: 10px 0;
+};
+
+.wrapper {
+    background-image: url('./img/fall.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    overflow: hidden;
+    user-select: none;
+
+    &.gallery {
+        background-image: url('./img/autumn.webp');
+        background-repeat: repeat;
+        background-position: initial;
+        background-size: initial;
+    }
+}
+
+.container {
+    max-width: 1280px;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+
+.main {
+    position: relative;
+    flex: 1 1 auto;
+}
+
+.logo {
+    max-width: 300px;
+
+    img { width: 100%; }
+
+    @media(max-width: 641px) {
+        img { width: 250px; }
+
+        @media(max-width: 481px) {
+            img { width: 200px; }
+        }
+    }
+}
